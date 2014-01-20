@@ -17,7 +17,6 @@
 ;; Define default packages for installation
 (defvar axolote/packages '(
 			   paredit
-			   sublime-themes
 			   auto-complete
 			   autopair
 			   magit
@@ -28,7 +27,9 @@
                emmet-mode
                web-mode
                org-pomodoro
-               helm-ag)
+               helm-ag
+               color-theme-approximate
+               color-theme-sanityinc-tomorrow)
   "Default packages")
 
 ;; Install packages if not already
@@ -53,7 +54,7 @@
     (add-to-list 'load-path project)))
 
 ;; Set the custom theme
-(load-theme 'odersky t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 ;; Delete selected text... as God intended
 (delete-selection-mode t)
@@ -68,7 +69,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("dc46381844ec8fcf9607a319aa6b442244d8c7a734a2625dac6a1f63e34bc4a6" "e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" "91b5a381aa9b691429597c97ac56a300db02ca6c7285f24f6fe4ec1aa44a98c3" "29a4267a4ae1e8b06934fec2ee49472daebd45e1ee6a10d8ff747853f9a3e622" "d293542c9d4be8a9e9ec8afd6938c7304ac3d0d39110344908706614ed5861c9" default)))
+ '(custom-safe-themes (quote ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "90b5269aefee2c5f4029a6a039fb53803725af6f5c96036dee5dc029ff4dff60" "dc46381844ec8fcf9607a319aa6b442244d8c7a734a2625dac6a1f63e34bc4a6" "e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" "91b5a381aa9b691429597c97ac56a300db02ca6c7285f24f6fe4ec1aa44a98c3" "29a4267a4ae1e8b06934fec2ee49472daebd45e1ee6a10d8ff747853f9a3e622" "d293542c9d4be8a9e9ec8afd6938c7304ac3d0d39110344908706614ed5861c9" default)))
  '(linum-format (quote dynamic)))
 
 ;; Make stuff easier
@@ -76,6 +77,7 @@
 
 ;; hide toolbar
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Proper line wrapping
 (global-visual-line-mode t)
