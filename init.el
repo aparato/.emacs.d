@@ -2,7 +2,10 @@
 (require 'cl)
 
 ;; This windows thing. God!!
-(setq default-buffer-file-coding-system 'utf-8-unix)
+(setq-default buffer-file-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+(setq-default default-buffer-file-coding-system 'utf-8-unix)
 
 ;; Disable backups. I just hate the mess they make
 (setq backup-inhibited t)
@@ -65,6 +68,7 @@
 
 ;; Font stuff
 (set-face-attribute 'default nil :height 100)
+(nlinum-mode t)
 
 ;; (custom-set-variables '(linum-format (quote " %2d")))
 (custom-set-variables
