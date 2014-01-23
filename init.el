@@ -216,12 +216,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 
-; Default notes file
-(setq org-default-notes-file (expand-file-name "~/Encfs/notes/refile.org"))
 
-; Agenda stuff
-(setq org-agenda-files (quote ("~/Encfs/notes/"
-                              "~/Encfs/notes/clients/")))
 
 ; Todo flow and stuff
 (setq org-todo-keywords
@@ -249,29 +244,41 @@
               ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
 
+
+;; Define the path to stuff depending on whether the editor is used in
+;; windows or a *NIX environment
+(setq org-base-path (expand-file-name "~/Encfs/notes"))
+(when (eq system-type 'windows-nt)
+  (setq org-base-path "D:/"))
+
+; Default notes file
+(setq org-default-notes-file (format "%s/%s" org-base-path "notes.org"))
+
+; Agenda stuff
+;;(setq org-agenda-files (quote ((format "%s" org-base-path))))
+(setq org-agenda-files (list org-base-path (format "%s/%s" org-base-path "clients")))
+
 ; Org capture templates
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/Encfs/notes/refile.org")
+      (quote (("t" "todo" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("r" "respond" entry (file "~/Encfs/notes/refile.org")
+              ("r" "respond" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "note" entry (file "~/Encfs/notes/refile.org")
+              ("n" "note" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "~/Encfs/notes/diary.org")
+              ("j" "Journal" entry (file+datetree (format "%s/%s" org-base-path "diary.org"))
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "~/Encfs/notes/refile.org")
+              ("w" "org-protocol" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* TODO Review %c\n%U\n" :immediate-finish t)
-              ("m" "Meeting" entry (file "~/Encfs/notes/refile.org")
+              ("m" "Meeting" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-              ("p" "Phone call" entry (file "~/Encfs/notes/refile.org")
+              ("p" "Phone call" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "~/Encfs/notes/refile.org")
+              ("h" "Habit" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
 ; Habit tracking
 (setq org-log-repeat "time")
-
-
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
