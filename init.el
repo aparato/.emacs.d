@@ -35,8 +35,7 @@
                org-pomodoro
                helm-ag
                color-theme-approximate
-               color-theme-sanityinc-tomorrow
-               nlinum-mode)
+               color-theme-sanityinc-tomorrow)
   "Default packages")
 
 ;; Install packages if not already
@@ -69,7 +68,6 @@
 
 ;; Font stuff
 (set-face-attribute 'default nil :height 100)
-(nlinum-mode t)
 
 ;; (custom-set-variables '(linum-format (quote " %2d")))
 (custom-set-variables
