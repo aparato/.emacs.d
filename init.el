@@ -35,7 +35,8 @@
                org-pomodoro
                helm-ag
                color-theme-approximate
-               color-theme-sanityinc-tomorrow)
+               color-theme-sanityinc-tomorrow
+               nlinum-mode)
   "Default packages")
 
 ;; Install packages if not already
