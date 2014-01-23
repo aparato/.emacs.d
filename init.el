@@ -1,6 +1,9 @@
 ;; I need loop!! Should look for a way to remove it
 (require 'cl)
 
+;; This windows thing. God!!
+(setq default-buffer-file-coding-system 'utf-8-unix)
+
 ;; Disable backups. I just hate the mess they make
 (setq backup-inhibited t)
 (setq auto-save-default nil)
