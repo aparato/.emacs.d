@@ -231,7 +231,7 @@
 
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
-              ("NEXT" :foreground "blue" :weight bold)
+              ("NEXT" :foreground "white" :weight bold)
               ("DONE" :foreground "forest green" :weight bold)
               ("WAITING" :foreground "orange" :weight bold)
               ("HOLD" :foreground "magenta" :weight bold)
@@ -255,7 +255,7 @@
 ;; windows or a *NIX environment
 (setq org-base-path (expand-file-name "~/Encfs/notes"))
 (when (eq system-type 'windows-nt)
-  (setq org-base-path "D:/"))
+  (setq org-base-path "C:/Users/aparato/Dropbox/journal/"))
 
 ; Default notes file
 (setq org-default-notes-file (format "%s/%s" org-base-path "notes.org"))
