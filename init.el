@@ -76,7 +76,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "90b5269aefee2c5f4029a6a039fb53803725af6f5c96036dee5dc029ff4dff60" "dc46381844ec8fcf9607a319aa6b442244d8c7a734a2625dac6a1f63e34bc4a6" "e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" "91b5a381aa9b691429597c97ac56a300db02ca6c7285f24f6fe4ec1aa44a98c3" "29a4267a4ae1e8b06934fec2ee49472daebd45e1ee6a10d8ff747853f9a3e622" "d293542c9d4be8a9e9ec8afd6938c7304ac3d0d39110344908706614ed5861c9" default)))
- '(linum-format (quote dynamic)))
+ '(linum-format (quote dynamic))
+ '(org-agenda-files (quote ("/Users/aparato/Dropbox/journal/diary.org" "/Users/aparato/Dropbox/journal/finances.org" "/Users/aparato/Dropbox/journal/ideas.org" "/Users/aparato/Dropbox/journal/notes.org" "/Users/aparato/Dropbox/journal/refile.org" "/Users/aparato/Dropbox/journal/clients/agn.org" "/Users/aparato/Dropbox/journal/clients/almondev.org" "/Users/aparato/Dropbox/journal/clients/fho.org" "/Users/aparato/Dropbox/journal/clients/personal.org" "/Users/aparato/Dropbox/journal/clients/rewardz.org" "/Users/aparato/Dropbox/journal/clients/skreener.org"))))
 
 ;; Make stuff easier
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -253,16 +254,23 @@
 
 ;; Define the path to stuff depending on whether the editor is used in
 ;; windows or a *NIX environment
-(setq org-base-path (expand-file-name "~/Encfs/notes"))
+(setq org-base-path (expand-file-name "~/Dropbox/journal/"))
 (when (eq system-type 'windows-nt)
   (setq org-base-path "C:/Users/aparato/Dropbox/journal/"))
 
 ; Default notes file
 (setq org-default-notes-file (format "%s/%s" org-base-path "notes.org"))
 
+;; This is so that it works with the android app
+(setq org-mobile-directory (format "%s/%s" org-base-path "mobile"))
+(setq org-directory org-base-path)
+
 ; Agenda stuff
 ;;(setq org-agenda-files (quote ((format "%s" org-base-path))))
 (setq org-agenda-files (list org-base-path (format "%s/%s" org-base-path "clients")))
+(setq org-mobile-files (list org-base-path (format "%s/%s" org-base-path "clients")))
+
+(setq org-mobile-inbox-for-pull (format "%s/%s/%s" org-base-path "inbox" "inbox.org"))
 
 ; Org capture templates
 (setq org-capture-templates
