@@ -67,7 +67,7 @@
 (transient-mark-mode t)
 
 ;; Font stuff
-(set-face-attribute 'default nil :height 100)
+;; (set-face-attribute 'default nil :height 100)
 
 ;; (custom-set-variables '(linum-format (quote " %2d")))
 (custom-set-variables
@@ -254,9 +254,9 @@
 
 ;; Define the path to stuff depending on whether the editor is used in
 ;; windows or a *NIX environment
-(setq org-base-path (expand-file-name "~/Dropbox/journal/"))
+(setq org-base-path (expand-file-name "~/Box Sync/Documents/journal/"))
 (when (eq system-type 'windows-nt)
-  (setq org-base-path "C:/Users/Mario/Dropbox/journal/"))
+  (setq org-base-path "C:/Users/Mario/Box Sync/Documents/journal/"))
 
 ; Default notes file
 (setq org-default-notes-file (format "%s/%s" org-base-path "notes.org"))
