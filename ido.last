@@ -1,0 +1,70 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/aparato/" . "Work/")
+ ("/Users/aparato/Box Sync/Documents/" . "journal/")
+ ("/Users/aparato/hubiC/Documents/journal/" . "clients/")
+ ("/Users/aparato/hubiC/Documents/" . "journal/")
+ ("/Users/aparato/Dropbox/" . "journal/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/aparato/Work/"
+ "/Users/aparato/Box Sync/Documents/journal/"
+ "/Users/aparato/hubiC/Documents/journal/"
+ "/Users/aparato/hubiC/Documents/journal/clients/"
+ "/Users/aparato/.emacs.d/"
+ "/Users/aparato/Dropbox/journal/files/rewardz/"
+ "/Users/aparato/Dropbox/journal/"
+ "/Users/aparato/Dropbox/journal/clients/"
+ "/Users/aparato/Dropbox/journal/files/"
+ "/Users/aparato/Dropbox/journal/clients/archives/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ 
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/aparato/Work/" (21306 18181 0 0) "rewardz-ios/" "rewardz-android/" "rewardz/" "google-play-services_lib/" ".metadata/" "../" "./")
+
+ ("/Users/aparato/" (21332 26310 0 0) "Work/" "tmp/" "Qt/" "Public/" "Projects/" "Pictures/" "pgadmin.log" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Development/" "Desktop/" "Box Sync/" "Applications/" ".zshrc-e" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-aparato’s iMac-5.0.2" ".virtualenvs/" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".subversion/" ".ssh/" ".sh_history" ".rest-client/" ".putty/" ".pip/" ".pgpass" ".oh-my-zsh/" ".mono/" ".local/" ".itmstransporter/" ".ipython/" ".hgignore_global" ".gitignore_global" ".gitconfig" ".emacs.d/" ".DS_Store" ".dropbox-master/" ".dropbox/" ".distlib/" ".config/" ".cocoapods/" ".CFUserTextEncoding" ".cache/" ".Box Sync/" ".bash_history" ".android/" "../" "./")
+
+ ("/Users/aparato/Box Sync/Documents/journal/" (21332 43842 0 0) "refile.org" "notes.org" "mobile/" "inbox/" "ideas.org" "finances.org" "files/" "diary.org" "clients/" "837379594.pdf" ".#refile.org" "../" "./")
+
+ ("/Users/aparato/Box Sync/Documents/journal/clients/" (21332 43983 0 0) "soymarketing.org" "skreener.org" "rewardz.org" "personal.org" "fho.org" "archives/" "almondev.org" "agn.org" ".#soymarketing.org" ".#rewardz.org" "../" "./")
+
+ ("/Users/aparato/Box Sync/Documents/" (21318 52857 0 0) "starcraft_saves/" "journal/" "ios_certs/" "Firefox Recovery Key.html" "cvs/" "business/" "books/" ".DS_Store" "../" "./")
+
+ ("/Users/aparato/Box Sync/" (21324 44038 0 0) "Videos/" "Images/" "Documents/" "../" "./")
+
+ ("/Users/aparato/hubiC/Documents/journal/clients/" (21324 10608 0 0) "soymarketing.org" "skreener.org" "rewardz.org" "personal.org" "fho.org" "archives/" "almondev.org" "agn.org" "../" "./")
+
+ ("/Users/aparato/hubiC/Documents/journal/" (21323 4198 0 0) "refile.org" "notes.org" "mobile/" "inbox/" "ideas.org" "finances.org" "files/" "diary.org" "clients/" "837379594.pdf" "../" "./")
+
+ ("/Users/aparato/hubiC/Documents/" (21318 52857 0 0) "starcraft_saves/" "journal/" "ios_certs/" "Firefox Recovery Key.html" "cvs/" "business/" "books/" ".DS_Store" "../" "./")
+
+ ("/Users/aparato/hubiC/" (21318 52724 0 0) "Videos/" "Images/" "Documents/" "../" "./")
+
+ ("/Users/aparato/.emacs.d/" (21318 52903 0 0) "vendor/" "snippets/" "server/" "README.md" "LICENSE" "init.el" "image-dired/" "ido.last" "elpa/" "bookmarks" "auto-save-list/" "ac-comphist.dat" ".smex-items" ".org-id-locations" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/aparato/Dropbox/journal/clients/" (21317 16679 0 0) "soymarketing.org" "skreener.org" "rewardz.org" "personal.org" "fho.org" "archives/" "almondev.org" "agn.org" ".#rewardz.org" "../" "./")
+
+ ("/Users/aparato/Dropbox/journal/files/rewardz/" (21312 27776 0 0) "time_first_week_january.html" "Rewardz Front Page.png" "march2014rewardz.html" "iphone_layout_issue.png" "Google Maps.gif" "2nd_half_january_2014.html" "../" "./")
+
+ ("/Users/aparato/Dropbox/journal/" (21311 10504 0 0) "refile.org" "notes.org" "mobile/" "inbox/" "ideas.org" "finances.org" "files/" "diary.org" "clients/" "837379594.pdf" "../" "./")
+
+ ("/Users/aparato/Dropbox/" (21312 14242 0 0) "starcraft_saves/" "Screenshots/" "Public/" "journal/" "ios_certs/" "Icon
+" "hide_these_pictures.7z" "Firefox Recovery Key.html" "family_check_out.7z" "dianaruth/" "diana_ruth/" "cvs/" "cute_pics/" "clienthidden/" "clientfiles/" "civ5_saves/" "business/" "books/" "almondev/" ".tmux.conf" ".hidden_encfs/" ".DS_Store" ".dropbox.cache/" ".directory" ".client_files_encfs/" "../" "./")
+
+ ("/Users/aparato/Dropbox/journal/files/" (21307 57417 0 0) "skreener/" "rewardz/" "efinity/" "almondev/" "agn/" "../" "./")
+
+ ("/Users/aparato/Dropbox/journal/clients/archives/" (21306 54921 0 0) "soymarketing.org_archive" "rewardz.org_archive" "rewardz (DELETE-THIS's conflicted copy 2014-03-24).org_archive" "personal.org_archive" "almondev.org_archive" "agn.org_archive" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
