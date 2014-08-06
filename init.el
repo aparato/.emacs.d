@@ -35,6 +35,8 @@
                org-pomodoro
                helm-ag
                color-theme-approximate
+               virtualenvwrapper
+               jedi
                color-theme-sanityinc-tomorrow)
   "Default packages")
 
@@ -187,20 +189,20 @@
 ;; LANGUAGE CONFIGURATIONS
 
 ;; PYTHON
-   ;; Virtualenv settings
-;; (require 'virtualenvwrapper)
-;; (venv-initialize-interactive-shells)
-;; (venv-initialize-eshell)
-;; (setq venv-location "~/.virtualenvs/")
+;; Virtualenv settings
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells)
+(venv-initialize-eshell)
+(setq venv-location "~/.virtualenvs/")
 
-;; (defadvice venv-mkvirtualenv (after install-common-tools)
-;;   "Install commonly used packages in venv"
-;;   (shell-command "pip install jedi epc"))
+(defadvice venv-mkvirtualenv (after install-common-tools)
+  "Install commonly used packages in venv"
+  (shell-command "pip install jedi epc"))
 
-    ;; Jedi completion
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:setup-keys t)
-;; (setq jedi:complete-on-dot t)
+;; Jedi completion
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
 
 ;; HTML, JS, CSS
 (require 'web-mode)
@@ -254,11 +256,11 @@
 
 ;; Define the path to stuff depending on whether the editor is used in
 ;; windows or a *NIX environment
-(setq org-base-path (expand-file-name "~/Box Sync/Documents/journal/"))
+(setq org-base-path (expand-file-name "~/Dropbox/journal/"))
 (when (eq system-type 'windows-nt)
-  (setq org-base-path "C:/Users/Mario/Box Sync/Documents/journal/"))
+  (setq org-base-path "C:/Users/Mario/Dropbox/journal/"))
 
-; Default notes file
+; notes file
 (setq org-default-notes-file (format "%s/%s" org-base-path "notes.org"))
 
 ;; This is so that it works with the android app
