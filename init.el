@@ -26,16 +26,17 @@
 			   autopair
 			   magit
 			   smex
+               auto-complete
+               jedi
 			   helm
                helm-ack
                yasnippet
                emmet-mode
                web-mode
                virtualenvwrapper
-               jedi
                nlinum
                fiplr
-               company
+               badger-theme
                color-theme-sanityinc-tomorrow)
   "Default packages")
 
@@ -63,6 +64,7 @@
 ;; Set the custom theme
 (load-theme 'sanityinc-tomorrow-night t)
 
+
 ;; Delete selected text... as God intended
 (delete-selection-mode t)
 (transient-mark-mode t)
@@ -76,9 +78,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "90b5269aefee2c5f4029a6a039fb53803725af6f5c96036dee5dc029ff4dff60" "dc46381844ec8fcf9607a319aa6b442244d8c7a734a2625dac6a1f63e34bc4a6" "e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" "91b5a381aa9b691429597c97ac56a300db02ca6c7285f24f6fe4ec1aa44a98c3" "29a4267a4ae1e8b06934fec2ee49472daebd45e1ee6a10d8ff747853f9a3e622" "d293542c9d4be8a9e9ec8afd6938c7304ac3d0d39110344908706614ed5861c9" default)))
+ '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector ["black" "#E2434C" "#86B187" "#E0D063" "#84C452" "#E18CBB" "#8AC6F2" "white"])
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
+ '(custom-safe-themes (quote ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "f0a99f53cbf7b004ba0c1760aa14fd70f2eabafe4e62a2b3cf5cabae8203113b" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" "97a2b10275e3e5c67f46ddaac0ec7969aeb35068c03ec4157cf4887c401e74b1" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "90b5269aefee2c5f4029a6a039fb53803725af6f5c96036dee5dc029ff4dff60" "dc46381844ec8fcf9607a319aa6b442244d8c7a734a2625dac6a1f63e34bc4a6" "e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" "91b5a381aa9b691429597c97ac56a300db02ca6c7285f24f6fe4ec1aa44a98c3" "29a4267a4ae1e8b06934fec2ee49472daebd45e1ee6a10d8ff747853f9a3e622" "d293542c9d4be8a9e9ec8afd6938c7304ac3d0d39110344908706614ed5861c9" default)))
+ '(fci-rule-color "#343d46")
  '(linum-format (quote dynamic))
- '(org-agenda-files nil))
+ '(org-agenda-files nil t)
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map (quote ((20 . "#bf616a") (40 . "#DCA432") (60 . "#ebcb8b") (80 . "#B4EB89") (100 . "#89EBCA") (120 . "#89AAEB") (140 . "#C189EB") (160 . "#bf616a") (180 . "#DCA432") (200 . "#ebcb8b") (220 . "#B4EB89") (240 . "#89EBCA") (260 . "#89AAEB") (280 . "#C189EB") (300 . "#bf616a") (320 . "#DCA432") (340 . "#ebcb8b") (360 . "#B4EB89"))))
+ '(vc-annotate-very-old-color nil))
 
 ;; Make stuff easier
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -129,10 +138,6 @@
 ;; autopair
 (require 'autopair)
 
-;; autocomplete
-(require 'auto-complete-config)
-(ac-config-default)
-
 ;; configure helm
 (require 'helm-config)
 (require 'helm-ack)
@@ -181,15 +186,6 @@
 (venv-initialize-interactive-shells)
 (venv-initialize-eshell)
 (setq venv-location "~/.virtualenvs/")
-
-(defadvice venv-mkvirtualenv (after install-common-tools)
-  "Install commonly used packages in venv"
-  (shell-command "pip install jedi epc"))
-
-;; Jedi completion
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
 
 ;; HTML, JS, CSS
 (require 'web-mode)
@@ -282,6 +278,7 @@
 (setq org-log-repeat "time")
 
 ;; Line numbers on sidebar
+(setq nlinum-format "%d:")
 (global-nlinum-mode 1)
 
 ;; Fiplr
@@ -291,6 +288,19 @@
 (require 'powerline)
 (powerline-default-theme)
 
+;; Windmove and stuff
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
+;; Jedi settings
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+
+;; Autocomplete settings
+(require 'auto-complete-config)
+(ac-config-default)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -298,3 +308,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil)))))
 (put 'dired-find-alternate-file 'disabled nil)
+
+
+
+
