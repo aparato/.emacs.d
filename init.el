@@ -23,20 +23,19 @@
 ;; Define default packages for installation
 (defvar axolote/packages '(
 			   paredit
-			   auto-complete
 			   autopair
 			   magit
 			   smex
 			   helm
-			   helm-ls-git
+               helm-ack
                yasnippet
                emmet-mode
                web-mode
-               org-pomodoro
-               helm-ag
-               color-theme-approximate
                virtualenvwrapper
                jedi
+               nlinum
+               fiplr
+               company
                color-theme-sanityinc-tomorrow)
   "Default packages")
 
@@ -136,19 +135,7 @@
 
 ;; configure helm
 (require 'helm-config)
-(require 'helm-ls-git)
-
-(defun helm-mini ()
-  "Additions to helm mini so that I can use .git as a project thing"
-  (interactive)
-  (require 'helm-files)
-  (helm-other-buffer '(
-		       helm-c-source-buffers-list
-		       helm-c-source-recentf
-		       helm-c-source-ls-git-status
-		       helm-c-source-ls-git
-		       helm-c-source-buffer-not-found)
-		     "*helm mini"))
+(require 'helm-ack)
 
 (global-set-key (kbd "C-c h") 'helm-mini)
 
@@ -206,9 +193,6 @@
 
 ;; HTML, JS, CSS
 (require 'web-mode)
-(setq web-mode-engines-alist
-      '(("django" . "\\.html\\'"))
-)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
@@ -241,6 +225,7 @@
               ("CANCELLED" :foreground "forest green" :weight bold)
               ("MEETING" :foreground "forest green" :weight bold)
               ("PHONE" :foreground "forest green" :weight bold))))
+
 (setq org-use-fast-todo-selection t)
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
@@ -293,8 +278,18 @@
               ("h" "Habit" entry (file (format "%s/%s" org-base-path "refile.org"))
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
-; Habit tracking
+;; Habit tracking
 (setq org-log-repeat "time")
+
+;; Line numbers on sidebar
+(global-nlinum-mode 1)
+
+;; Fiplr
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+
+;; Powerline
+(require 'powerline)
+(powerline-default-theme)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
