@@ -29,12 +29,13 @@
                auto-complete
                jedi
 			   helm
-               helm-ack
+               helm-ag
                yasnippet
                emmet-mode
                web-mode
                virtualenvwrapper
                nlinum
+               less-css-mode
                fiplr
                badger-theme
                color-theme-sanityinc-tomorrow)
@@ -137,6 +138,8 @@
 
 ;; autopair
 (require 'autopair)
+(add-hook 'web-mode-hook (lambda ()
+                           (setq autopair-dont-activate) t))
 
 ;; configure helm
 (require 'helm-config)
