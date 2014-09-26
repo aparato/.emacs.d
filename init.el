@@ -27,14 +27,11 @@
 			   magit
 			   smex
                auto-complete
-               jedi
 			   helm
                helm-ag
                yasnippet
                emmet-mode
                web-mode
-               virtualenvwrapper
-               nlinum
                less-css-mode
                fiplr
                badger-theme
@@ -143,7 +140,6 @@
 
 ;; configure helm
 (require 'helm-config)
-(require 'helm-ack)
 
 (global-set-key (kbd "C-c h") 'helm-mini)
 
@@ -280,16 +276,8 @@
 ;; Habit tracking
 (setq org-log-repeat "time")
 
-;; Line numbers on sidebar
-(setq nlinum-format "%d:")
-(global-nlinum-mode 1)
-
 ;; Fiplr
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
-
-;; Powerline
-(require 'powerline)
-(powerline-default-theme)
 
 ;; Windmove and stuff
 (when (fboundp 'windmove-default-keybindings)
