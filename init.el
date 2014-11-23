@@ -14,7 +14,6 @@
 ;; hide splash screen
 (setq inhibit-startup-message t)
 
-
 ;; Add more repos to package.el
 (require 'package)
 (package-initialize)
@@ -181,10 +180,10 @@
 
 ;; PYTHON
 ;; Virtualenv settings
-(require 'virtualenvwrapper)
-(venv-initialize-interactive-shells)
-(venv-initialize-eshell)
-(setq venv-location "~/.virtualenvs/")
+;; (require 'virtualenvwrapper)
+;; (venv-initialize-interactive-shells)
+;; (venv-initialize-eshell)
+;; (setq venv-location "~/.virtualenvs/")
 
 ;; HTML, JS, CSS
 (require 'web-mode)
@@ -284,9 +283,9 @@
   (windmove-default-keybindings))
 
 ;; Jedi settings
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:setup-keys t)
+;; (setq jedi:complete-on-dot t)
 
 ;; Autocomplete settings
 (require 'auto-complete-config)
@@ -299,7 +298,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil)))))
 (put 'dired-find-alternate-file 'disabled nil)
-
 
 
 
